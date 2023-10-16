@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="cookiestyle.css">
+        <title>Clicking the cookie</title>
+        <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+        <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
+
+    </head>
+    <body>
+        <header>
+            <ul class="topBar">
+                <li>Cookie clicker @ seba</li>
+            </ul>
+        </header>
+        <div class="container">
+
+
+          <!-- Left section -->
+
+          <div class="left-section">
+            <canvas id="cookieRain" height="913px" width="576px"></canvas>
+
+            <h1 class="bakery-name">Sebas Cookie factory</h1>
+
+            <div class="infoScore">
+              <p id="score">0</p>
+              <p>Cookies</p>
+              <p id="overTime">per second:</p>
+              <button id="cheatbtn">Cheat</button>
+            </div>
+
+            <!-- Cookie image -->
+            <div id="bigCookie"></div>
+
+          </div>
+
+          <div class="sepBeam"></div>
+
+          <!-- Center section -->
+
+          <div class="center-main">
+            <div class="center-top">
+              <h1>Cookie news</h1>
+            </div>
+
+            <div class="sepBeamLez"></div>
+
+            <div class="center-bot">
+              <h1 class="building-h">Locations</h1>
+              <div class="rows">
+                <div class="sepBeamLez"></div>
+
+                <div class="hidden row" id="row1">
+                  <canvas id="mid1" height="128px" width="1px"></canvas>
+                </div>
+                <div class="hidden sepBeamLez" id="beam1"></div>
+
+                <div class="hidden row" id="row2">
+                  <canvas id="mid2" height="128px" width="1px"></canvas>
+                </div>
+                <div class="hidden sepBeamLez" id="beam2"></div>
+
+                <div class="hidden row" id="row3">
+                  <canvas id="mid3" height="128px" width="1px"></canvas>
+                </div>
+                <div class="hidden sepBeamLez" id="beam3"></div>
+
+                <div class="hidden row" id="row4">
+                  <canvas id="mid4" height="128px" width="1px"></canvas>
+                </div>
+                <div class="hidden sepBeamLez" id="beam4"></div>
+
+                <div class="hidden row" id="row5">
+                  <canvas id="mid5" height="128px" width="1px"></canvas>
+                </div>
+                <div class="hidden sepBeamLez" id="beam5"></div>
+
+                <div class="hidden row" id="row6">
+                  <canvas id="mid6" height="128px" width="1px"></canvas>
+                </div>
+                <div class="hidden sepBeamLez" id="beam6"></div>
+
+                <div class="hidden row" id="row7">
+                  <canvas id="mid7" height="128px" width="1px"></canvas>
+                </div>
+                <div class="hidden sepBeamLez" id="beam7"></div>
+
+                <div class="hidden row" id="row8">
+                  <canvas id="mid8" height="128px" width="1px"></canvas>
+                </div>
+                <div class="hidden sepBeamLez" id="beam8"></div>
+
+                <div class="hidden row" id="row9">
+                  <canvas id="mid9" height="128px" width="1px"></canvas>
+                </div>
+                <div class="hidden sepBeamLez" id="beam9"></div>
+
+                <div class="hidden row" id="row10">
+                  <canvas id="mid10" height="128px" width="1px"></canvas>
+                </div>
+                <div class="hidden sepBeamLez" id="beam10"></div>
+
+                <div class="hidden row" id="row11">
+                  <canvas id="mid11" height="128px" width="1px"></canvas>
+                </div>
+                <div class="hidden sepBeamLez" id="beam11"></div>
+
+                <div class="hidden row" id="row12">
+                  <canvas id="mid12" height="128px" width="1px"></canvas>
+                </div>
+                <div class="hidden sepBeamLez" id="beam12"></div>
+
+                <div class="hidden row" id="row13">
+                  <canvas id="mid13" height="128px" width="1px"></canvas>
+                </div>
+                <div class="hidden sepBeamLez" id="beam13"></div>
+
+                <div class="hidden row" id="row14">
+                  <canvas id="mid14" height="128px" width="1px"></canvas>
+                </div>
+                <div class="hidden sepBeamLez" id="beam14"></div>
+
+                <div class="hidden row" id="row15">
+                  <canvas id="mid15" height="128px" width="1px"></canvas>
+                </div>
+                <div class="hidden sepBeamLez" id="beam15"></div>
+
+                <div class="hidden row" id="row16">
+                  <canvas id="mid16" height="128px" width="1px"></canvas>
+                </div>
+                <div class="hidden sepBeamLez" id="beam16"></div>
+
+                <div class="hidden row" id="row17">
+                  <canvas id="mid17" height="128px" width="1px"></canvas>
+                </div>
+                <div class="hidden sepBeamLez" id="beam17"></div>
+
+                <div class="hidden row" id="row18">
+                  <canvas id="mid18" height="128px" width="1px"></canvas>
+                </div>
+                <div class="hidden sepBeamLez" id="beam18"></div>
+
+                <div class="hidden row" id="row19">
+                  <canvas id="mid19" height="128px" width="1px"></canvas>
+                </div>
+                <div class="hidden sepBeamLez" id="beam19"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="sepBeam"></div>
+
+          <!-- right section -->
+
+          <div class="right-section">
+
+            <!-- Upgrade tiles small -->
+
+            <div class="right-section-up">
+              <h1 class="upgrade-store">Store</h1>
+
+              <div class="sepBeamLez"></div>
+
+              <div id="storeSection"></div>
+
+            
+
+          </div>
+
+            <!-- Building tiles -->
+
+            <div class="right-section-down">
+
+              <div class="sepBeamLez"></div>
+              
+              <h1 class="building-h1">Buildings</h1>
+
+              <div class="building-tile" id="building0">
+                <div class="building-icon-cursor" id="cursorImg"></div>
+                <div class="btn-content">
+                  <span class="building-name" id="building0Name">???</span>
+                  <span class="price" id="building0Price">15</span>
+                  <span class="owned" id="building0Owned">0</span>
+                </div>
+              </div>
+
+              <div class="hidden building-tile" id="building1">
+                <div class="building-icon-granny" id="grannyImg"></div>
+                <div class="btn-content">
+                  <span class="building-name" id="building1Name">???</span>
+                  <span class="price" id="building1Price">100</span>
+                  <span class="owned" id="building1Owned">0</span>
+                </div>
+              </div>
+
+              <div class="hidden building-tile" id="building2">
+                <div class="building-icon-farm" id="farmImg"></div>
+                <div class="btn-content">
+                  <span class="building-name" id="building2Name">???</span>
+                  <span class="price" id="building2Price">1100</span>
+                  <span class="owned" id="building2Owned">0</span>
+                </div>
+              </div>
+
+              <div class="hidden building-tile" id="building3">
+                <div class="building-icon-mine" id="mineImg"></div>
+                <div class="btn-content">
+                  <span class="building-name" id="building3Name">???</span>
+                  <span class="price" id="building3Price">12000</span>
+                  <span class="owned" id="building3Owned">0</span>
+                </div>
+              </div>
+
+              <div class="hidden building-tile" id="building4">
+                <div class="building-icon-factory" id="factoryImg"></div>
+                <div class="btn-content">
+                  <span class="building-name" id="building4Name">???</span>
+                  <span class="price" id="building4Price">0</span>
+                  <span class="owned" id="building4Owned">0</span>
+                </div>
+              </div>
+
+              <div class="hidden building-tile" id="building5">
+                <div class="building-icon-bank" id="bankImg"></div>
+                <div class="btn-content">
+                  <span class="building-name" id="building5Name">???</span>
+                  <span class="price" id="building5Price">0</span>
+                  <span class="owned" id="building5Owned">0</span>
+                </div>
+              </div>
+
+              <div class="hidden building-tile" id="building6">
+                <div class="building-icon-temple" id="templeImg"></div>
+                <div class="btn-content">
+                  <span class="building-name" id="building6Name">???</span>
+                  <span class="price" id="building6Price">0</span>
+                  <span class="owned" id="building6Owned">0</span>
+                </div>
+              </div>
+
+              <div class="hidden building-tile" id="building7">
+                <div class="building-icon-wizard" id="wizardImg"></div>
+                <div class="btn-content">
+                  <span class="building-name" id="building7Name">???</span>
+                  <span class="price" id="building7Price">0</span>
+                  <span class="owned" id="building7Owned">0</span>
+                </div>
+              </div>
+
+              <div class="hidden building-tile" id="building8">
+                <div class="building-icon-shipment" id="shipmentImg"></div>
+                <div class="btn-content">
+                  <span class="building-name" id="building8Name">???</span>
+                  <span class="price" id="building8Price">0</span>
+                  <span class="owned" id="building8Owned">0</span>
+                </div>
+              </div>
+
+              <div class="hidden building-tile" id="building9">
+                <div class="building-icon-alchemy" id="alchemyImg"></div>
+                <div class="btn-content">
+                  <span class="building-name" id="building9Name">???</span>
+                  <span class="price" id="building9Price">0</span>
+                  <span class="owned" id="building9Owned">0</span>
+                </div>
+              </div>
+
+              <div class="hidden building-tile" id="building10">
+                <div class="building-icon-portal" id="portalImg"></div>
+                <div class="btn-content">
+                  <span class="building-name" id="building10Name">???</span>
+                  <span class="price" id="building10Price">0</span>
+                  <span class="owned" id="building10Owned">0</span>
+                </div>
+              </div>
+
+              <div class="hidden building-tile" id="building11">
+                <div class="building-icon-time" id="timeImg"></div>
+                <div class="btn-content">
+                  <span class="building-name" id="building11Name">???</span>
+                  <span class="price" id="building11Price">0</span>
+                  <span class="owned" id="building11Owned">0</span>
+                </div>
+              </div>
+
+              <div class="hidden building-tile" id="building12">
+                <div class="building-icon-antimatter" id="antimatterImg"></div>
+                <div class="btn-content">
+                  <span class="building-name" id="building12Name">???</span>
+                  <span class="price" id="building12Price">0</span>
+                  <span class="owned" id="building12Owned">0</span>
+                </div>
+              </div>
+
+              <div class="hidden building-tile" id="building13">
+                <div class="building-icon-prism" id="prismImg"></div>
+                <div class="btn-content">
+                  <span class="building-name" id="building13Name">???</span>
+                  <span class="price" id="building13Price">0</span>
+                  <span class="owned" id="building13Owned">0</span>
+                </div>
+              </div>
+
+              <div class="hidden building-tile" id="building14">
+                <div class="building-icon-chancemaker" id="chanceMakerImg"></div>
+                <div class="btn-content">
+                  <span class="building-name" id="building14Name">???</span>
+                  <span class="price" id="building14Price">0</span>
+                  <span class="owned" id="building14Owned">0</span>
+                </div>
+              </div>
+
+              <div class="hidden building-tile" id="building15">
+                <div class="building-icon-fractal" id="fractalImg"></div>
+                <div class="btn-content">
+                  <span class="building-name" id="building15Name">???</span>
+                  <span class="price" id="building15Price">0</span>
+                  <span class="owned" id="building15Owned">0</span>
+                </div>
+              </div>
+
+              <div class="hidden building-tile" id="building16">
+                <div class="building-icon-javascript" id="javascriptImg"></div>
+                <div class="btn-content">
+                  <span class="building-name" id="building16Name">???</span>
+                  <span class="price" id="building16Price">0</span>
+                  <span class="owned" id="building16Owned">0</span>
+                </div>
+              </div>
+
+              <div class="hidden building-tile" id="building17">
+                <div class="building-icon-idleverse" id="idleverseImg"></div>
+                <div class="btn-content">
+                  <span class="building-name" id="building17Name">???</span>
+                  <span class="price" id="building17Price">0</span>
+                  <span class="owned" id="building17Owned">0</span>
+                </div>
+              </div>
+
+              <div class="hidden building-tile" id="building18">
+                <div class="building-icon-cortex" id="cortexImg"></div>
+                <div class="btn-content">
+                  <span class="building-name" id="building18Name">???</span>
+                  <span class="price" id="building18Price">0</span>
+                  <span class="owned" id="building18Owned">0</span>
+                </div>
+              </div>
+
+              <div class="hidden building-tile" id="building19">
+                <div class="building-icon-you" id="youImg"></div>
+                <div class="btn-content">
+                  <span class="building-name" id="building19Name">???</span>
+                  <span class="price" id="building19Price">0</span>
+                  <span class="owned" id="building19Owned">0</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div> 
+        <script src="cookiev2.js"></script>
+    </body>
+</html>

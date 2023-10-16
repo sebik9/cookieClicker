@@ -1,0 +1,626 @@
+* {
+    margin:0;
+    padding:0;
+    border: 0px;
+}
+
+header {
+    background-color: black;
+    width: 100%;
+    height: 50px;
+    color: white;
+}
+
+.topBar {
+    display: flex;
+    padding-top: 15px;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: calc(100vh - 50px);
+  }
+
+  .sepBeam {
+    width: 15px;
+    height: 100%;
+    background: 
+        url("img/panelGradientTop.png") no-repeat top left,
+        url("img/panelGradientBottom.png") no-repeat bottom left,
+        url("img/panelVertical.png") repeat-y;
+    background-size: 
+        100% 30%,
+        100% 30%,
+        auto;
+  }
+  
+  .left-section {
+    position: relative;
+    flex: 1 1 30%;
+    text-align: center;
+    background-color: aquamarine;
+    height: 100%;
+    width: 100%;
+    max-width: 30%;
+  }
+
+  #cookieRain {
+    position: absolute; 
+    top: 0;
+    left: 0;
+    background-image: url("img/blueBG.png");
+  }
+
+  .center-main {
+    flex: 1 1 calc(50% - 30px);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    max-width: calc(50% - 30px);
+  }
+
+  .sepBeamLez {
+    height: 14px;
+    width: 100%;
+    background: 
+        url("img/panelGradientLeft.png") no-repeat top left,
+        url("img/panelGradientRight.png") no-repeat top right ,
+        url("img/panelHorizontal.png") repeat-x;
+    background-size: 
+        30% 100%,
+        30% 100%,
+        auto;
+  }
+
+    .center-top {
+    flex: 15%;
+    background-image: url("img/blueBG.png");
+  }
+
+  .center-bot {
+    flex: calc(85% - 15px);
+    background-image: url("img/blueBG.png");
+    color: white;
+    overflow: auto;
+  }
+
+  .right-section {
+    flex: 1 1 20%;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    height: 100%;
+    background: url("img/blueBG.png");
+    z-index: 1;    
+  }
+
+  .right-section-up {
+    width: 100%;
+    height: 240px;
+    min-height: 131px;
+    background: url("img/blueBG.png");
+    position: relative;
+    overflow: auto;
+    z-index: 1;
+  }
+
+  .right-section-up::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+#storeSection {
+  position: absolute;
+  display: inline-flex;
+  flex-wrap: wrap;
+  left: 0px;
+  top: 72px;
+  width: 100%;
+  height: fit-content;
+}
+
+.crate {
+  position: relative;
+  height: 48px;
+  width: 48px;
+  background-position: 0px 0px;
+  margin-right: 12px;
+  margin-bottom: 12px;
+  top: 5px;
+  left: 6px;
+  z-index: 1;
+  transition: opacity 0.3s ease;
+}
+
+.iconBG {
+  position: absolute;
+  background: url("img/ikonyshort.png");
+  background-repeat: no-repeat;
+  width: 48px;
+  height: 48px;
+  z-index: 1;
+}
+
+.crate::before {
+  content: '';
+  position: absolute;
+  background: url("img/upgradeFrame.png");
+  left: -6px;
+  top: -6px;
+  height: 60px;
+  width: 60px;
+  z-index: 5;
+}
+
+.crate:hover::before {
+  background-position: 60px 0px;
+}
+
+  .upgrade-store {
+    color: white;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .right-section-down {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background: url("img/blueBG.png");
+    position: relative;
+    z-index: 1;
+  }
+
+  .right-section-down::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+  .bakery-name {
+    position: relative;
+    top: 25px;
+  }
+
+  .infoScore {
+    background-color: black;
+    opacity: 0.5;
+    position: relative;
+    height: fit-content;
+    width: 100%;
+    overflow: auto;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 30px;
+  }
+
+  .infoScore p {
+    opacity: 2;
+    color: white;
+  }
+
+  #bigCookie {
+    position: relative;
+    background-image: url("img/cookie.png");
+    background-size: cover;
+    width: 350px;
+    height: 350px;
+    top: 150px;
+    left: 85px;
+    overflow: auto;
+    transition: transform 0.2s, top 0.2s, left 0.2s;
+    animation: bounceBack 0.4s ease-in-out;
+    cursor: pointer;
+    z-index: 10000;
+    
+    border-radius: 50%;
+  }
+
+  @keyframes bounceBack {
+    0% {
+        transform: scale(1.1);
+    }
+
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+  }
+
+  #bigCookie:hover {
+    transform: scale(1.1);
+    animation: bounce 0.4s ease-in-out;
+  }
+
+  @keyframes bounce {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1.1);
+    }
+  }
+
+  #bigCookie:active {
+    transform: scale(1.1);
+    animation: activeBounce 0.4s ease-in-out;
+  }
+
+  @keyframes activeBounce {
+    0% {
+      transform: scale(1.1);
+    }
+    50% {
+      transform: scale(0.9);
+    }
+    100% {
+      transform: scale(1.1);
+    }
+  }
+
+  .building-h1 {
+    background-color: black;
+    color: bisque;
+    user-select: none;
+  }
+
+  .building-tile {
+    position: relative;
+    background-image: url("img/storeTile.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 64px;
+    width: 100%;
+    user-select: none;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+  }
+
+  .disabled {
+    pointer-events: none;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .removed {
+    display: none;
+  }
+
+  .building-tile:hover {
+    cursor: pointer;
+    filter: brightness(115%);
+  }
+
+  .building-icon-cursor {
+    background-image: url("img/buildings.png");
+    position: absolute;
+    background-position: -64px 0px;
+    background-repeat: no-repeat;
+    width: 64px;
+    height: 64px;
+  }
+
+  .building-icon-granny {
+    background-image: url("img/buildings.png");
+    position: absolute;
+    background-position: -64px -64px;
+    background-repeat: no-repeat;
+    width: 64px;
+    height: 64px;
+  }
+
+  .building-icon-farm {
+    background-image: url("img/buildings.png");
+    position: absolute;
+    background-position: -64px -193px;
+    background-repeat: no-repeat;
+    width: 64px;
+    height: 64px;
+  }
+
+  .building-icon-mine {
+    background-image: url("img/buildings.png");
+    position: absolute;
+    background-position: -64px -256px;
+    background-repeat: no-repeat;
+    width: 64px;
+    height: 64px;
+  }
+
+  .building-icon-factory {
+    background-image: url("img/buildings.png");
+    position: absolute;
+    background-position: -64px -320px;
+    background-repeat: no-repeat;
+    width: 64px;
+    height: 64px;
+  }
+
+  .building-icon-bank {
+    background-image: url("img/buildings.png");
+    position: absolute;
+    background-position: -64px -384px;
+    background-repeat: no-repeat;
+    width: 64px;
+    height: 64px;
+  }
+
+  .building-icon-temple {
+    background-image: url("img/buildings.png");
+    position: absolute;
+    background-position: -64px -448px;
+    background-repeat: no-repeat;
+    width: 64px;
+    height: 64px;
+  }
+
+  .building-icon-wizard {
+    background-image: url("img/buildings.png");
+    position: absolute;
+    background-position: -64px -512px;
+    background-repeat: no-repeat;
+    width: 64px;
+    height: 64px;
+  }
+
+  .building-icon-shipment {
+    background-image: url("img/buildings.png");
+    position: absolute;
+    background-position: -64px -577px;
+    background-repeat: no-repeat;
+    width: 64px;
+    height: 64px;
+  }
+
+  .building-icon-alchemy {
+    background-image: url("img/buildings.png");
+    position: absolute;
+    background-position: -64px -641px;
+    background-repeat: no-repeat;
+    width: 64px;
+    height: 64px;
+  }
+
+  .building-icon-portal {
+    background-image: url("img/buildings.png");
+    position: absolute;
+    background-position: -64px -704px;
+    background-repeat: no-repeat;
+    width: 64px;
+    height: 64px;
+  }
+
+  .building-icon-time {
+    background-image: url("img/buildings.png");
+    position: absolute;
+    background-position: -64px -768px;
+    background-repeat: no-repeat;
+    width: 64px;
+    height: 64px;
+  }
+
+  .building-icon-antimatter {
+    background-image: url("img/buildings.png");
+    position: absolute;
+    background-position: -64px -832px;
+    background-repeat: no-repeat;
+    width: 64px;
+    height: 64px;
+  }
+
+  .building-icon-prism {
+    background-image: url("img/buildings.png");
+    position: absolute;
+    background-position: -64px -896px;
+    background-repeat: no-repeat;
+    width: 64px;
+    height: 64px;
+  }
+
+  .building-icon-chancemaker {
+    background-image: url("img/buildings.png");
+    position: absolute;
+    background-position: -64px -960px;
+    background-repeat: no-repeat;
+    width: 64px;
+    height: 64px;
+  }
+
+  .building-icon-fractal {
+    background-image: url("img/buildings.png");
+    position: absolute;
+    background-position: -64px -1024px;
+    background-repeat: no-repeat;
+    width: 64px;
+    height: 64px;
+  }
+
+  .building-icon-javascript {
+    background-image: url("img/buildings.png");
+    position: absolute;
+    background-position: -64px -1088px;
+    background-repeat: no-repeat;
+    width: 64px;
+    height: 64px;
+  }
+
+  .building-icon-idleverse {
+    background-image: url("img/buildings.png");
+    position: absolute;
+    background-position: -64px -1152px;
+    background-repeat: no-repeat;
+    width: 64px;
+    height: 64px;
+  }
+
+  .building-icon-cortex {
+    background-image: url("img/buildings.png");
+    position: absolute;
+    background-position: -64px -1216px;
+    background-repeat: no-repeat;
+    width: 64px;
+    height: 64px;
+  }
+
+  .building-icon-you {
+    background-image: url("img/buildings.png");
+    position: absolute;
+    background-position: -64px -1280px;
+    background-repeat: no-repeat;
+    width: 64px;
+    height: 64px;
+  }
+
+  .building-name {
+    width: fit-content;
+    height: fit-content;
+    color: white;
+    position: absolute;
+    font-size: 25px;
+    left: 20%;
+    top: 20%;
+    font-weight: bolder;
+  }
+
+  .price {
+    width: fit-content;
+    height: fit-content;
+    color: red;
+    position: absolute;
+    bottom: 10%;
+    left: 20%;
+    text-align: left;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  .owned {
+    position: absolute;
+    width: fit-content;
+    height: fit-content;
+    color: black;
+    opacity: 0.5;
+    right: 5%;
+    top: 15%;
+    font-weight: bolder;
+    font-size: 35px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  .row {
+    height: 128px;
+    width: 100%;
+    background-color: black;
+  }
+
+  .building-h {
+    color: bisque;
+    background-color: black;
+  }
+
+  /* canvas BG section */
+
+  #mid1 {
+    background-image: url("img/grandmaBackground.png");
+  }
+
+  #mid2 {
+    background-image: url("img/farmBackground.png");
+  }
+
+  #mid3 {
+    background-image: url("img/mineBackground.png");
+  }
+
+  #mid4 {
+    background-image: url("img/factoryBackground.png");
+  }
+
+  #mid5 {
+    background-image: url("img/bankBackground.png");
+  }
+
+  #mid6 {
+    background-image: url("img/templeBackground.png");
+  }
+
+  #mid7 {
+    background-image: url("img/wizardtowerBackground.png");
+  }
+
+  #mid8 {
+    background-image: url("img/shipmentBackground.png");
+  }
+
+  #mid9 {
+    background-image: url("img/alchemylabBackground.png");
+  }
+
+  #mid10 {
+    background-image: url("img/portalBackground.png");
+  }
+
+  #mid11 {
+    background-image: url("img/timemachineBackground.png");
+  }
+
+  #mid12 {
+    background-image: url("img/antimattercondenserBackground.png");
+  }
+
+  #mid13 {
+    background-image: url("img/prismBackground.png");
+  }
+
+  #mid14 {
+    background-image: url("img/chancemakerBackground.png");
+  }
+
+  #mid15 {
+    background-image: url("img/fractalEngineBackground.png");
+  }
+
+  #mid16 {
+    background-image: url("img/javascriptconsoleBackground.png");
+  }
+
+  #mid17 {
+    background-image: url("img/idleverseBackground.png");
+  }
+
+  #mid18 {
+    background-image: url("img/cortexBackground.png");
+  }
+
+  #mid19 {
+    background-image: url("img/youBackground.png");
+  }
+
+  .noMuny {
+    filter: grayscale(100%);
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+  }
