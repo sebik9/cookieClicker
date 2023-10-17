@@ -249,6 +249,7 @@ let idleverse = { ...defaultIdleverse}
 let cortex = { ...defaultCortex}
 let you = { ...defaultYou}
 
+//building arr pro loopovani
 const buildings = [
     cursor,
     grandma,
@@ -283,7 +284,7 @@ window.onload = function() {
         const backgroundHeight = -48;
 
         if (container !== null) {
-
+            //arr pro ceny
             const prices = [100, 1000, 11000, 120000, 1300000, 14000000, 200000000, 3300000000, 51000000000, 750000000000, 10000000000000, 140000000000000, 1700000000000000, 
             21000000000000000, 260000000000000000, 3100000000000000000, 710000000000000000000, 120000000000000000000000, 19000000000000000000000000, 5400000000000000000000000000,
             500, 5000, 55000, 600000, 6500000, 70000000, 1000000000, 16500000000, 255000000000, 3750000000000, 50000000000000, 700000000000000, 85000000000000000,
@@ -292,6 +293,7 @@ window.onload = function() {
             500000000000000, 7000000000000000, 8500000000000000000, 105000000000000000000, 13000000000000000000, 155000000000000000000, 35500000000000000000000,
             6000000000000000000000000, 95000000000000000000000000, 27000000000000000000000000000000];
 
+            //generace small upg
             for (let i = 0; i < numElements; i++) {
                 const element = document.createElement('div');
                 const uniqueId = `upgrade${i + 1}`;
@@ -331,6 +333,7 @@ window.onload = function() {
         
     };
 
+//formatovani score pro hezci cisla
 function formatScore(number) {
     if(number >= 1000) {
     const suffixes = ['', 'Thousand', 'Milion', 'Bilion', 'Trilion', 'Quadrillion', 'Quintilion', 'Sextilion', 'Septilion', 'Octillion', 'Nonillion', 'Decillion', 'Undecillion', 'Duodecillion'];
@@ -555,7 +558,7 @@ function youUpgrade() {
 }
 building19.addEventListener('click', youUpgrade);
 
-//hromadný update dat nutno použit v každé funkci s upg..
+//hromadný update dat
 function updateData() {
     score.innerHTML = formatScore(gameData.displayValue);
     overTime.innerHTML = "cookies per sec: " + formatScore(gameData.cpsShow);
@@ -953,6 +956,7 @@ function updateData() {
 
 }
 
+    //progress pro cookie rain track
     let userProgress = 0;
     let userProgressTwo = 0;
     let userProgressThree = 0;
@@ -964,7 +968,7 @@ function clickOnCookie() {
 }
 bigCookie.addEventListener("click", clickOnCookie);
 
-//cheat test purpose
+//cheat pro testování
 function cheat() {
     gameData.cookies += 540000000000000000000000000;
     updateData();
@@ -1037,7 +1041,7 @@ function updateMidCanvas() {
 
         for (let j = 0; j < buildings[i].count; j++) {
             let offsetX = startX + j * spacingX; // X position calc
-            let offsetY = startY + (j % 2 === 0 ? 0 : spacingY); // Y coord should be zig zag
+            let offsetY = startY + (j % 2 === 0 ? 0 : spacingY); // Y coord 
             ctx.drawImage(imagesToLoad[i], offsetX, offsetY, imageWidth, imageHeight);
         }
     }
@@ -1056,8 +1060,8 @@ function updateMidCanvas() {
         let spacingY = 15;
 
         for (let j = 0; j < buildings[i].count; j++) {
-            let offsetX = startX + j * spacingX; // X position calc
-            let offsetY = startY + (j % 2 === 0 ? 0 : spacingY); // Y coord should be zig zag
+            let offsetX = startX + j * spacingX; 
+            let offsetY = startY + (j % 2 === 0 ? 0 : spacingY); 
             ctx.drawImage(imagesToLoad[i], offsetX, offsetY, imageWidth, imageHeight);
         }
     }
@@ -1076,7 +1080,7 @@ function updateMidCanvas() {
         
 
         for (let j = 0; j < buildings[i].count; j++) {
-            let offsetX = startX + j * spacingX; // X position calc
+            let offsetX = startX + j * spacingX; 
             let offsetY = startY;
             ctx.drawImage(imagesToLoad[i], offsetX, offsetY, imageWidth, imageHeight);
         }
@@ -1095,7 +1099,7 @@ function updateMidCanvas() {
         let spacingX = 60;
 
         for (let j = 0; j < buildings[i].count; j++) {
-            let offsetX = startX + j * spacingX; // X position calc
+            let offsetX = startX + j * spacingX; 
             let offsetY = startY;
             ctx.drawImage(imagesToLoad[i], offsetX, offsetY, imageWidth, imageHeight);
         }
@@ -1115,8 +1119,8 @@ function updateMidCanvas() {
         let spacingY = 15;
 
         for (let j = 0; j < buildings[i].count; j++) {
-            let offsetX = startX + j * spacingX; // X position calc
-            let offsetY = startY + (j % 2 === 0 ? 0 : spacingY); // Y coord should be zig zag
+            let offsetX = startX + j * spacingX; 
+            let offsetY = startY + (j % 2 === 0 ? 0 : spacingY); 
             ctx.drawImage(imagesToLoad[i], offsetX, offsetY, imageWidth, imageHeight);
         }
     }
@@ -1135,8 +1139,8 @@ function updateMidCanvas() {
         let spacingY = 25;
 
         for (let j = 0; j < buildings[i].count; j++) {
-            let offsetX = startX + j * spacingX; // X position calc
-            let offsetY = startY + (j % 2 === 0 ? 0 : spacingY); // Y coord should be zig zag
+            let offsetX = startX + j * spacingX; 
+            let offsetY = startY + (j % 2 === 0 ? 0 : spacingY); 
             ctx.drawImage(imagesToLoad[i], offsetX, offsetY, imageWidth, imageHeight);
         }
     }
@@ -1154,7 +1158,7 @@ function updateMidCanvas() {
         let spacingX = 65; 
 
         for (let j = 0; j < buildings[i].count; j++) {
-            let offsetX = startX + j * spacingX; // X position calc
+            let offsetX = startX + j * spacingX; 
             let offsetY = startY;
             ctx.drawImage(imagesToLoad[i], offsetX, offsetY, imageWidth, imageHeight);
         }
@@ -1174,8 +1178,8 @@ function updateMidCanvas() {
         let spacingY = 25;
 
         for (let j = 0; j < buildings[i].count; j++) {
-            let offsetX = startX + j * spacingX; // X position calc
-            let offsetY = startY + (j % 2 === 0 ? 0 : spacingY); // Y coord should be zig zag
+            let offsetX = startX + j * spacingX; 
+            let offsetY = startY + (j % 2 === 0 ? 0 : spacingY); 
             ctx.drawImage(imagesToLoad[i], offsetX, offsetY, imageWidth, imageHeight);
         }
     }
@@ -1194,8 +1198,8 @@ function updateMidCanvas() {
         let spacingY = 20;
 
         for (let j = 0; j < buildings[i].count; j++) {
-            let offsetX = startX + j * spacingX; // X position calc
-            let offsetY = startY + (j % 2 === 0 ? 0 : spacingY); // Y coord should be zig zag
+            let offsetX = startX + j * spacingX; 
+            let offsetY = startY + (j % 2 === 0 ? 0 : spacingY); 
             ctx.drawImage(imagesToLoad[i], offsetX, offsetY, imageWidth, imageHeight);
         }
     }
@@ -1214,8 +1218,8 @@ function updateMidCanvas() {
         let spacingY = 50;
 
         for (let j = 0; j < buildings[i].count; j++) {
-            let offsetX = startX + j * spacingX; // X position calc
-            let offsetY = startY + (j % 2 === 0 ? 0 : spacingY); // Y coord should be zig zag
+            let offsetX = startX + j * spacingX; 
+            let offsetY = startY + (j % 2 === 0 ? 0 : spacingY); 
             ctx.drawImage(imagesToLoad[i], offsetX, offsetY, imageWidth, imageHeight);
         }
     }
@@ -1234,8 +1238,8 @@ function updateMidCanvas() {
         let spacingY = 15;
 
         for (let j = 0; j < buildings[i].count; j++) {
-            let offsetX = startX + j * spacingX; // X position calc
-            let offsetY = startY + (j % 2 === 0 ? 0 : spacingY); // Y coord should be zig zag
+            let offsetX = startX + j * spacingX; 
+            let offsetY = startY + (j % 2 === 0 ? 0 : spacingY); 
             ctx.drawImage(imagesToLoad[i], offsetX, offsetY, imageWidth, imageHeight);
         }
     }
@@ -1247,6 +1251,7 @@ window.addEventListener("resize", updateMidCanvas)
 const canvasLeft = document.getElementById('cookieRain');
 const ctx = canvasLeft.getContext('2d');
 
+//resize pro levý canvas
 function setSizeLeftCanvas() {
     let leftSection = document.querySelector(".left-section");
     canvasLeft.height = leftSection.clientHeight;
@@ -1254,6 +1259,7 @@ function setSizeLeftCanvas() {
   }
 window.addEventListener("resize", setSizeLeftCanvas);
 
+//nahrani cookie
 const cookieImage = new Image();
 cookieImage.src = 'img/cookie.png';
 
@@ -1326,7 +1332,7 @@ cookieImage.onload = function () {
 };
 
 
-
+//funkce pro mala tlacitka upg
 function btnClick(building, button, i) {
     const element = document.getElementById(`upgrade${i + 1}`);
     const upgradePrice = parseFloat(element.getAttribute('data-price'));
