@@ -1378,8 +1378,3 @@ setTimeout(() => {
         });
     }
 }, 100);
-
-tippy('#upgrade1', {   content: "Reinforced Finger" + gameData.cookies,  followCursor: true, allowHTML: true,});
-/* to do list 
-dodelat tippy tooltips
-*/
